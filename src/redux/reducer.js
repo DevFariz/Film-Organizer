@@ -3,7 +3,6 @@ const initialState = {
   favoriteMovies: [],
 };
 
-
 function reducer(state = initialState, action) {
   switch (action.type) {
     case "GET_MOVIES":
@@ -24,6 +23,24 @@ function reducer(state = initialState, action) {
 
       console.log(favoriteFilms, isSame);
       return { ...state, favoriteMovies: favoriteFilms };
+
+    case "REMOVE_MOVIE_FROM_FAVORITES":
+      const tempMovies = [...state.favoriteMovies];
+
+      let elIndex = -1;
+      tempMovies.find((item, index) => {
+        if (item.id === action.payload.Id) {
+          elIndex = index;
+          return elIndex;
+        }
+
+        return false
+      });
+
+      tempMovies.splice(elIndex, 1);
+
+      console.log(elIndex);
+      return { ...state, favoriteMovies: tempMovies };
 
     default:
       return state;

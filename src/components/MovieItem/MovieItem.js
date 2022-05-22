@@ -13,6 +13,7 @@ class MovieItem extends Component {
           <h3 className="movie-item__title">
             {Title}&nbsp;({Year})
           </h3>
+          
           <button
             onClick={() => addMovieToFavorites(imdbID, Title, Year)}
             type="button"

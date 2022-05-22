@@ -18,7 +18,12 @@
 }
 
 .list__item{
-    margin-bottom: 18px;
+    margin-bottom: 15px;
+    line-height: 22px;
+}
+
+.close__btn{
+    float: right;
 }
 
 .favorites__save {

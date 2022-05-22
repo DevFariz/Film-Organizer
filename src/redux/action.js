@@ -17,9 +17,18 @@ export const addMovieToFavorites = (Id, Title, Year) => {
   return {
     type: "ADD_MOVIE_TO_FAVOURITES",
     payload: {
-      Id: Id,
-      Title: Title,
-      Year: Year,
+      Id,
+      Title,
+      Year,
     },
   };
 };
+
+export const removeMovieFromFavorites = (Id) => {
+  return {
+    type: "REMOVE_MOVIE_FROM_FAVORITES",
+    payload: {
+      Id
+    }
+  }
+}
