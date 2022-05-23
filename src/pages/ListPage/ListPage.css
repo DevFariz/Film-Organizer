@@ -10,3 +10,7 @@
 .list-page ul li {
     font-size: 18px;
 }
+
+.movie__item{
+    margin-bottom: 10px;
+}

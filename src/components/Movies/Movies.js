@@ -19,9 +19,9 @@ class Movies extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (s) => {
     return {
-        movies: state.movies
+        movies: s.movies
     }
 }
  

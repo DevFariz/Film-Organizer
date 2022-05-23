@@ -32,3 +32,18 @@ export const removeMovieFromFavorites = (Id) => {
     }
   }
 }
+
+export const getMoviesInList = (id) => {
+  return (dispatch) => {
+    const getData = async () => {
+      const response = await fetch(
+        `https://acb-api.algoritmika.org/api/movies/list/${id}`
+      );
+      const data = response.json();
+      return data;
+    };
+    getData().then((data) =>
+      dispatch({ type: "GET_MOVIES_IN_LIST", data: data })
+    );
+  };
+};

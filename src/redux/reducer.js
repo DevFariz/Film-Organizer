@@ -1,12 +1,14 @@
 const initialState = {
   movies: [],
   favoriteMovies: [],
+  moviesList: {},
 };
 
 function reducer(state = initialState, action) {
   switch (action.type) {
     case "GET_MOVIES":
       return { ...state, movies: action.data };
+
     case "ADD_MOVIE_TO_FAVOURITES":
       const favoriteFilms = [...state.favoriteMovies];
       let isSame = favoriteFilms.some((el) => {
@@ -20,8 +22,6 @@ function reducer(state = initialState, action) {
           year: action.payload.Year,
         });
       }
-
-      console.log(favoriteFilms, isSame);
       return { ...state, favoriteMovies: favoriteFilms };
 
     case "REMOVE_MOVIE_FROM_FAVORITES":
@@ -34,13 +34,15 @@ function reducer(state = initialState, action) {
           return elIndex;
         }
 
-        return false
+        return false;
       });
-
       tempMovies.splice(elIndex, 1);
 
-      console.log(elIndex);
       return { ...state, favoriteMovies: tempMovies };
+
+    case "GET_MOVIES_IN_LIST":
+      console.log(state.moviesList)
+      return { ...state, moviesList: action.data };
 
     default:
       return state;

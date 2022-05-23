@@ -24,6 +24,11 @@
 
 .close__btn{
     float: right;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
 }
 
 .favorites__save {
@@ -39,4 +44,8 @@
     cursor: pointer;
     opacity: 0.9;
     transition: all 0.2s linear;
+}
+
+.favorites__save:disabled{
+    background-color: #d3d3d3;
 }
